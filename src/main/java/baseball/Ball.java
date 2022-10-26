@@ -14,7 +14,8 @@ public class Ball {
 
     public BallStatus play(Ball ball){
         if(this.equals(ball)) return BallStatus.STRIKE;
-        if(ball.matchBallNum(ballNum))return BallStatus.BALL;
+        if(ball.matchBallNum(ballNum))
+            return BallStatus.BALL;
         return BallStatus.NOTHING;
     }
 
