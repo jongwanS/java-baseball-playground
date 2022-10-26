@@ -29,7 +29,6 @@ public class BallTest {
         assertThat(ValidateUtilsTest.validate(10)).isFalse();
     }
 
-    @Ignore
     @Test
     @DisplayName("스트라이크")
     void strike() {
