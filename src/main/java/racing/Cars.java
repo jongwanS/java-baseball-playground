@@ -16,8 +16,6 @@ public class Cars {
     }
 
     public void getWinners() {
-
-
         List<Car> winners = cars.stream()
                 .collect(groupingBy(Car::getPosition))
                 .entrySet()
@@ -25,8 +23,19 @@ public class Cars {
                 .get()
                 .getValue();
 
+        StringBuilder sb = new StringBuilder();
         for(Car car : winners){
-            System.out.print(car.getCarName() + " ");
+            sb.append(car.getCarName());
+            sb.append(",");
+        }
+        System.out.print(sb.toString() + " 가 최종 우승했습니다.");
+    }
+
+    public void carsPlay(){
+        for(int i=0;i<cars.size();i++){
+            Car car = cars.get(i);
+            car.play();
+            car.printDistance(car);
         }
     }
 }
